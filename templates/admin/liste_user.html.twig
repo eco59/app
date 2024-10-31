@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace admin{% endblock %}
+
+{% block body %}
+<h1 class="mb-4 font-weight-bold text-center">Liste des utilisateurs</h1>
+<div class="container bg-color p-4 rounded">
+    <div class="d-flex flex-column align-items-start">
+        {% for user in users %}
+        <div class="d-flex justify-content-between align-items-center mb-3 p-3 w-100 user-card">
+            <div>
+                <p class="text-white font-weight-bold">{{ user.pseudo }}</p>
+            </div>
+            <div class="button-group d-flex gap-2">
+                <form action="{{ path('admin_user_delete', {id: user.id}) }}" method="post" onsubmit="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                    <button class="btn btn-danger custom-btn">Supprimer</button>
+                </form>
+                <a href="{{ path('admin_user_change_password', {id: user.id}) }}" class="btn btn-warning custom-btn">Modifier le mot de passe</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

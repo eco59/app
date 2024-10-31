@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique scores{% endblock %}
+
+{% block body %}
+<div class="text-center min-vh">
+    <h1 class="font-weight-bold">Historique des scores</h1>
+    <ul class="list-group mt-4">
+        {% for eventData in events %}
+            <li class="list-group-item text_white mb-4 bg-blue custom-presentation">
+                {{ eventData.event.Titre }} - {{ eventData.count }} personnes se sont inscrit
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

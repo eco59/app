@@ -1,3 +1,189 @@
 body {
-    background-color: skyblue;
+    background-color: #F37A59 ;
 }
+
+a {
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+.preview {
+    display: none;
+}
+.carousel {
+    max-width: 500px; /* Définissez la largeur maximale souhaitée */
+    margin: 0 auto; /* Centrer horizontalement */
+}
+
+/* Assurer que les images occupent toute la largeur du carrousel */
+.carousel .carousel-item img {
+    width: 100%; /* L'image occupe toute la largeur du carrousel */
+    height: auto; /* Conserve les proportions de l'image */
+    object-fit: cover; /* Pour s'adapter au conteneur */
+}
+
+.text-red {
+    color: red;
+}
+.text-green {
+    color: green;
+} 
+.custom-presentation {
+    background-color: #3A8FA0;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+.bg-blue{
+    background-color: #3A8FA0;
+}
+
+.bg-pink {
+    background-color: #d4698b; /* Couleur rose */
+    color: #ffffff; /* Texte en blanc */
+    border: none; /* Enlever les bordures si nécessaire */
+}
+
+/* Désactiver l'effet de survol */
+.bg-pink:hover {
+    background-color: #d4698b; /* Garder la couleur de fond identique */
+    color: #ffffff; /* Garder le texte en blanc */
+    opacity: 1; /* S'assurer qu'il ne devienne pas transparent */
+    transition: none; /* Enlever les transitions si nécessaire */
+}
+
+.bg-color{
+    background-color: #273550;
+}
+.min-vh{
+    min-height: 70vh;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 400px;
+}
+
+
+.custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+.btn-events {
+    grid-column: span 2; /* Make this button full width */
+}
+
+.custom-btn:hover {
+    opacity: 0.85;
+}
+
+.custom-input {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-input::placeholder {
+    color: white;
+}
+
+.row .form-group {
+    display: flex;
+    justify-content: center;
+}
+
+.min-height{
+    min-height: 400px;
+}
+
+.contact-input {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.filter-input {
+    width: 100%;
+    max-width: 200px; /* Vous pouvez ajuster cette largeur selon vos besoins */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.event-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    max-width: 600px; /* Limiter la largeur pour un affichage plus uniforme */
+}
+
+.event-link:hover .event-item {
+    opacity: 0.9;
+    transform: scale(1.01); /* Légère mise en avant au survol */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.detail{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Centre le texte à l'intérieur */
+    margin: 0 auto; /* Centre le paragraphe dans son conteneur */
+    width: 300px;
+}
+
+.table {
+    background-color: transparent; /* Enlève le fond par défaut */
+    color: white; /* Texte en blanc pour le tableau */
+}
+.table th,
+.table td {
+    background-color: transparent; /* Assure qu'aucune couleur de fond n'est appliquée aux cellules */
+    color: white; /* Texte des en-têtes en blanc */
+}
+.badge-danger {
+    background-color: #dc3545; /* Rouge Bootstrap */
+    color: white; /* Texte blanc */
+    padding: 5px 10px; /* Ajouter un peu de rembourrage pour l'apparence */
+    border-radius: 5px; /* Coins arrondis */
+}
+.badge-approved {
+    background-color: #0b6613; /* Rouge Bootstrap */
+    color: white; /* Texte blanc */
+    padding: 5px 10px; /* Ajouter un peu de rembourrage pour l'apparence */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.user-card {
+    background-color: #3A8FA0; /* Bleu pour le fond de la carte utilisateur */
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ESportify{% endblock %}
+
+{% block body %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicateurs de pagination -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="{{ asset('assets/images/slide1.jpg') }}" class="d-block imgSlide" alt="1">
+        </div>
+        <div class="carousel-item">
+        <img src="{{ asset('assets/images/slide2.jpg') }}" class="d-block imgSlide" alt="2">
+        </div>
+        <div class="carousel-item">
+        <img src="{{ asset('assets/images/slide3.jpg') }}" class="d-block imgSlide" alt="3">
+        </div>
+        <div class="carousel-item">
+        <img src="{{ asset('assets/images/slide4.jpg') }}" class="d-block imgSlide" alt="4">
+        </div>
+        <div class="carousel-item">
+        <img src="{{ asset('assets/images/slide5.jpg') }}" class="d-block imgSlide" alt="5">
+        </div>
+        <div class="carousel-item">
+        <img src="{{ asset('assets/images/slide6.jpg') }}" class="d-block imgSlide" alt="6">
+        </div>
+    </div>
+
+    <!-- Flèches de navigation gauche et droite -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+    </button>
+</div>
+
+
+<div class="pt-4">
+    <h1 class="text-center">Bienvenue sur ESportify !</h1>
+</div>
+<div class="container mt-4">
+    <p class="custom-presentation text-center" >Chez Esportify nous sommes peu nombreux mais nous sommes surtout des passionnés de e-sport !</br>
+    Sur ce site nous rassemblons les personnes qui comme nous sont passionnés afin</br>
+    de pouvoir d'organiser des évènements !</br>
+    Avec ce site nous pouvons enfin nous inscrire a des tournois, de participer à des compétitons</br>
+    de suivre vos performances, de gagner des récompenses et bien sur de pouvoir discuter entre passionnés.<p>
+</div>
+
+
+
+<div class="d-flex justify-content-center pt-4">
+    <a href="{{ path('app_event') }}"><button class="bg-pink btn-lg btn custom-btn">Voir les évènements !</button></a>
+</div>
+{% endblock %}
