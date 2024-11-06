@@ -28,6 +28,7 @@
         <div class="form-group mb-4 pt-2">
             {{ form_widget(form.save, {'attr': {'class': 'form-control bg-pink custom-btn'}}) }}
         </div>
+        {{ form_row(form._token) }}
         <a href="{{ path('app_liste_user') }}" class="custom-btn bg-blue">Retour à la liste des utilisateurs</a>
             
     </div>
