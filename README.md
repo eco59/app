@@ -111,6 +111,12 @@ ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ```
+
+Puis installer les datafixtures:
+- ouvrir une console
+- puis taper la commande php bin/console doctrine:fixtures:load
+- ou symfony console doctrine:fixtures:load
+
 ## Deployment
 
 - Depuis la racine du projet (qui contient le dossier app), exécutez la commande suivante pour démarrer Docker :
