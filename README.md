@@ -65,51 +65,51 @@ composer install
 - a_mettre_en_dehors hors du dossier app pour qu'ils soient dans le même répertoire racine.
 
 
-Votre base de donnée: esportify:
+Voici le code SQL pour votre base de donnée: esportify:
 
-Table users {
-  id int [pk, increment]
-  pseudo varchar(180)
-  role longtext
-  email varchar(255)
-  mdp varchar(255)
-}
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  pseudo VARCHAR(180),
+  role LONGTEXT,
+  email VARCHAR(255),
+  mdp VARCHAR(255)
+);
 
-Table favori {
-  id int [pk, increment]
-  id_users int 
-  id_event int 
-  isBlocked int
-  
-}
+CREATE TABLE event (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  pseudo_id INT,
+  titre VARCHAR(255),
+  description LONGTEXT,
+  nombre_de_joueur INT,
+  autoriser TINYINT,
+  date_heure_debut DATETIME,
+  date_heure_fin DATETIME,
+  status VARCHAR(20),
+  FOREIGN KEY (pseudo_id) REFERENCES users(id) ON DELETE SET NULL
+);
 
-
-Table event {
-  id int [pk, increment]
-  pseudo_id int
-  titre varchar(255)
-  description longtext
-  nombre_de_joueur int
-  autoriser tinyint
-  date_heure_debut datetime
-  date_heure_fin datetime
-  status varchar(20)
-}
-
-
-
-ALTER TABLE favori
-ADD CONSTRAINT fk_favori_users
-FOREIGN KEY (id_users) REFERENCES users(id)
-ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE favori
-ADD CONSTRAINT fk_favori_event
-FOREIGN KEY (id_event) REFERENCES event(id)
-ON DELETE CASCADE ON UPDATE CASCADE;
+CREATE TABLE favori (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  id_users INT,
+  id_event INT,
+  isBlocked INT,
+  FOREIGN KEY (id_users) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (id_event) REFERENCES event(id) ON DELETE CASCADE
+);
 
 
 
+```
+Si vous utiliser symfony 7, vous pouvez tout simplement faire une migration en tapant cette commande
+
+```bash
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+ou
+
+symfony console make:migration
+symfony console doctrine:migrations:migrate
 ```
 
 Puis installer les datafixtures:
