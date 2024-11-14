@@ -66,6 +66,7 @@ composer install
 
 
 Voici le code SQL pour votre base de donnée: esportify:
+(Vous pouvez l'importer via le fichier .sql qui se trouve dans le dossier base de donnée)
 
 CREATE TABLE users (
   id INT PRIMARY KEY AUTO_INCREMENT,
